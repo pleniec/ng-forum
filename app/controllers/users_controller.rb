@@ -1,7 +1,6 @@
 class UsersController < APIController
   def create
-    user = User.create!(create_params)
-    render json: user
+    render json: User.create!(create_params)
   end
 
   private
