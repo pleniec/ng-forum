@@ -1,0 +1,21 @@
+<form name="form" novalidate>
+  <div class="form-group" ng-class="{'has-error': true}">
+    <label>Email:</label>
+    <input type="text" class="form-control" ng-model="email" required/>
+  </div>
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" ng-model="name" required/>
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="text" class="form-control" ng-model="password" required/>
+  </div>
+  <div class="form-group">
+    <label>Repeat password:</label>
+    <input type="text" class="form-control" ng-model="repeatPassword" required/>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" ng-click="signUp()">Sign Up</button>
+  </div>
+</form>

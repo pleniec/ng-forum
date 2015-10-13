@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ng-forum">
   <head>
     <title>NgForum</title>
     <%= stylesheet_link_tag 'application' %>
@@ -7,6 +7,16 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    Hi!
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <sign-in-form></sign-in-form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="registration">Sign Up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div ui-view></div>
+    </div>
   </body>
 </html>
