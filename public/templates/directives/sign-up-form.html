@@ -11,7 +11,7 @@
   </div>
   <div class="form-group" ng-class="{'has-error': errors.password != null}">
     <label>Password:</label>
-    <input type="text" class="form-control" ng-model="password" tooltip-enable="errors.password != null"
+    <input type="password" class="form-control" ng-model="password" tooltip-enable="errors.password != null"
         tooltip="{{ errors.password.join(', ') }}"/>
   </div>
   <div class="form-group">

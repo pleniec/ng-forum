@@ -10,6 +10,11 @@ angular
       })
       .state('registration', {
         url: '/registration',
-        templateUrl: '/templates/states/registration.html'
+        templateUrl: '/templates/states/registration.html',
+        onlyUnauthenticated: true
       })
   ))
+  .run ($rootScope, session, $location, $state) ->
+    $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
+      if session.isAuthenticated() and toState.onlyUnauthenticated
+        event.preventDefault()
