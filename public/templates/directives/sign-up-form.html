@@ -1,19 +1,18 @@
 <form name="form" novalidate>
-  <div class="form-group" ng-class="{'has-error': true}">
+  <div class="form-group" ng-class="{'has-error': errors.email != null}">
     <label>Email:</label>
-    <input type="text" class="form-control" ng-model="email" required/>
+    <input type="text" class="form-control" ng-model="email" tooltip-enable="errors.email != null"
+        tooltip="{{ errors.email.join(', ') }}"/>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="{'has-error': errors.name != null}">
     <label>Name:</label>
-    <input type="text" class="form-control" ng-model="name" required/>
+    <input type="text" class="form-control" ng-model="name" tooltip-enable="errors.name != null"
+        tooltip="{{ errors.name.join(', ') }}"/>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="{'has-error': errors.password != null}">
     <label>Password:</label>
-    <input type="text" class="form-control" ng-model="password" required/>
-  </div>
-  <div class="form-group">
-    <label>Repeat password:</label>
-    <input type="text" class="form-control" ng-model="repeatPassword" required/>
+    <input type="text" class="form-control" ng-model="password" tooltip-enable="errors.password != null"
+        tooltip="{{ errors.password.join(', ') }}"/>
   </div>
   <div class="form-group">
     <button class="btn btn-primary" ng-click="signUp()">Sign Up</button>

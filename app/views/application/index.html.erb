@@ -16,7 +16,7 @@
         <div ng-switch="session.isAuthenticated()">
           <div ng-switch-when="true">
             <form class="navbar-form navbar-right" novalidate name="form">
-              <button class="btn btn-primary" ng-click="session.signOut()">Sign Out</button>
+              <button class="btn btn-primary" ng-click="signOut()">Sign Out</button>
             </form>
           </div>
           <div ng-switch-when="false">

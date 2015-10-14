@@ -1,20 +1,15 @@
 angular
   .module('ng-forum')
-  .directive('signUpForm', ($http) ->
+  .directive('signUpForm', ($http, usersService, session) ->
     restrict: 'E',
     templateUrl: '/templates/directives/sign-up-form.html',
     link: (scope, element, attrs) ->
+      scope.errors = {}
+
       scope.signUp = () ->
-        $http
-          .post('/users', {user: {
-            email: scope.email,
-            name: scope.name,
-            password: scope.password
-          }}).then((() ->
-            console.log('success')
-          ),
-          ((response) ->
-            console.log('fail')
-            console.log(response.data)
-          ))
+        usersService.signUp scope.email, scope.password, scope.name, (success, data) ->
+          if success
+            session.setUser(data)
+          else
+            scope.errors = data.errors
   )
