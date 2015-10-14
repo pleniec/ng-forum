@@ -18,3 +18,6 @@ angular
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
       if session.isAuthenticated() and toState.onlyUnauthenticated
         event.preventDefault()
+
+      if !session.isAuthenticated() and toState.onlyAuthenticated
+        event.preventDefault()

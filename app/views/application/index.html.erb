@@ -15,9 +15,18 @@
 
         <div ng-switch="session.isAuthenticated()">
           <div ng-switch-when="true">
-            <form class="navbar-form navbar-right" novalidate name="form">
-              <button class="btn btn-primary" ng-click="signOut()">Sign Out</button>
-            </form>
+            <div class="navbar-form navbar-right">
+              <div class="btn-group" uib-dropdown>
+                <button id="user-dropdown-button" class="btn btn-primary" uib-dropdown-toggle>
+                  {{ session.getUser().name }} <span class="caret"></span>
+                </button>
+                <ul class="uib-dropdown-menu">
+                  <li role="menuitem"><a href="#">Action</a></li>
+                  <li class="divider"></li>
+                  <li role="menuitem"><a href="#" ng-click="signOut()">Sign Out</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div ng-switch-when="false">
             <sign-in-form></sign-in-form>
