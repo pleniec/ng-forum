@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ng-forum">
+<html ng-app="ng-forum" ng-controller="RootController">
   <head>
     <title>NgForum</title>
     <%= stylesheet_link_tag 'application' %>
@@ -9,10 +9,19 @@
   <body>
     <nav class="navbar navbar-default">
       <div class="container">
-        <sign-in-form></sign-in-form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref="registration">Sign Up</a></li>
-        </ul>
+        <div ng-switch="session.isAuthenticated()">
+          <div ng-switch-when="true">
+            <form class="navbar-form navbar-right" novalidate name="form">
+              <button class="btn btn-primary" ng-click="session.signOut()">Sign Out</button>
+            </form>
+          </div>
+          <div ng-switch-when="false">
+            <sign-in-form></sign-in-form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="registration">Sign Up</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
     <div class="container">

@@ -1,5 +1,5 @@
 angular
-  .module('ng-forum', ['ui.router'])
+  .module('ng-forum', ['ui.router', 'ngCookies'])
   .config(($stateProvider, $httpProvider) -> (
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
 

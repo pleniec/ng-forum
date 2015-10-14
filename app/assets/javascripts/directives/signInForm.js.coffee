@@ -1,9 +1,11 @@
 angular
   .module('ng-forum')
-  .directive('signInForm', ->
+  .directive('signInForm', ($http, session) ->
     restrict: 'E',
     templateUrl: '/templates/directives/sign-in-form.html',
     link: (scope, element, attrs) ->
-      scope.logIn = () ->
-        console.log(scope.form)
+
+      scope.signIn = () ->
+        session.signIn scope.email, scope.password, (success) ->
+          console.log success
   )
