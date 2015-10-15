@@ -13,6 +13,7 @@ gem 'bower-rails'
 gem 'devise'
 gem 'redis'
 gem 'active_model_serializers'
+gem 'cancancan'
 
 group :development do
   gem 'factory_girl_rails'
