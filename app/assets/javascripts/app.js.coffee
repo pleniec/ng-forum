@@ -3,6 +3,19 @@ angular
   .config(($stateProvider, $httpProvider) -> (
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
 
+    $httpProvider.interceptors.push ($q) ->
+      request: (config) ->
+        NProgress.start()
+        config
+
+      response: (response) ->
+        NProgress.done()
+        response
+
+      responseError: (rejection) ->
+        NProgress.done()
+        return $q.reject(rejection)
+
     $stateProvider
       .state('index', {
         url: '',
@@ -14,7 +27,7 @@ angular
         onlyUnauthenticated: true
       })
   ))
-  .run ($rootScope, session, $location, $state) ->
+  .run ($rootScope, session) ->
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
       if session.isAuthenticated() and toState.onlyUnauthenticated
         event.preventDefault()
