@@ -2,3 +2,11 @@
 = require bootstrap/dist/css/bootstrap
 = require nprogress/nprogress
 */
+
+.panel-body {
+  padding: 0px;
+}
+
+.list-group {
+  margin-bottom: 0px;
+}

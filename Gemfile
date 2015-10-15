@@ -12,3 +12,8 @@ gem 'jquery-rails'
 gem 'bower-rails'
 gem 'devise'
 gem 'redis'
+gem 'active_model_serializers'
+
+group :development do
+  gem 'factory_girl_rails'
+end

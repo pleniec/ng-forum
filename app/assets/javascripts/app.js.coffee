@@ -14,7 +14,7 @@ angular
 
       responseError: (rejection) ->
         NProgress.done()
-        return $q.reject(rejection)
+        $q.reject(rejection)
 
     $stateProvider
       .state('index', {
