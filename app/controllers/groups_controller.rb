@@ -1,6 +1,8 @@
 class GroupsController < APIController
   def index
-    render json: Group.all, serializer: ActiveModel::ArraySerializer, each_serializer: GroupSerializer, root: false
+    authorize! :index, Group
+    render json: Group.eager_load(:categories).all, root: false,
+      serializer: ActiveModel::ArraySerializer, each_serializer: GroupSerializer
   end
 
   def create
