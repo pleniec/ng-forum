@@ -6,5 +6,13 @@ class GroupsController < APIController
   end
 
   def create
+    authorize! :create, Group
+    render json: Group.create!(create_params), status: 201
+  end
+
+  private
+
+  def create_params
+    params.require(:group).permit(:name, :glyphicon)
   end
 end

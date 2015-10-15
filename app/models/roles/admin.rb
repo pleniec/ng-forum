@@ -5,7 +5,7 @@ module Roles
     def initialize_ability(ability)
       super
 
-      can :create, Group
+      ability.can :create, Group
     end
   end
 end

@@ -18,3 +18,6 @@ angular
 
     isAuthenticated: () ->
       this.getUser() != null
+
+    isAdmin: () ->
+      this.isAuthenticated() and this.getUser().role == 3

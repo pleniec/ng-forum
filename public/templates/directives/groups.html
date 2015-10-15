@@ -10,3 +10,6 @@
     </ul>
   </uib-accordion-group>
 </uib-accordion>
+<div ng-if="session.isAdmin()">
+  <create-group-form></create-group-form>
+</div>
