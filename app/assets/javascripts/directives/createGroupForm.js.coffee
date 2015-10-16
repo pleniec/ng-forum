@@ -1,10 +1,8 @@
 angular
   .module('ng-forum')
-  .directive 'createGroupForm', (session, groupsService, $state) ->
+  .directive 'createGroupForm', (session, $state, GroupsResource) ->
     restrict: 'E'
     templateUrl: '/templates/directives/create-group-form.html'
     link: (scope, element, attrs) ->
-      scope.errors = {}
-
-      scope.createGroup = () ->
+      scope.reloadState = () -> $state.reload()
         

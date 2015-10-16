@@ -13,6 +13,6 @@ class GroupsController < APIController
   private
 
   def create_params
-    params.require(:group).permit(:name, :glyphicon)
+    params.permit(:name, :glyphicon)
   end
 end

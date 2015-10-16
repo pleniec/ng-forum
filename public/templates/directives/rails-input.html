@@ -1,0 +1,4 @@
+<div ng-class="{'has-error': $parent.$parent.errors[attribute] != null}">
+  <input type="{{ type }}" class="form-control" ng-model="$parent.$parent.form[attribute]"
+      tooltip-enable="$parent.$parent.errors[attribute] != null" tooltip="{{ $parent.$parent.errors[attribute].join(', ') }}"/>
+</div>

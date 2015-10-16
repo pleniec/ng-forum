@@ -22,7 +22,7 @@ angular
 
       create: (params, callback) ->
         $http
-          .get('/' + @name)
+          .post('/' + @name, params)
           .then (response) ->
             callback(true, response.data)
           , (response) ->

@@ -1,14 +1,13 @@
-<hr/>
-<form name="form">
+<rails-form url="/groups" on-success="reloadState">
   <div class="form-group">
     <div class="row">
       <div class="col-lg-3">
         <label>Name: </label>
-        <input class="form-control"/>
+        <rails-input attribute="name" type="text"></rails-input>
       </div>
       <div class="col-lg-3">
         <label>Glyphicon: </label>
-        <input class="form-control"/>
+        <rails-input attribute="glyphicon" type="text"></rails-input>
       </div>
     </div>
   </div>
@@ -16,9 +15,9 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="form-group">
-          <button class="btn btn-primary" ng-click="createGroup()">Create Group</button>
+          <rails-submit>Create Group</rails-submit>
         </div>
       </div>
     </div>
   </div>
-</form>
+</rails-form>

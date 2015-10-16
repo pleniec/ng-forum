@@ -4,7 +4,7 @@ angular
     restrict: 'E'
     templateUrl: '/templates/directives/groups.html'
     link: (scope, element, attrs) ->
+      scope.groups = []
+      
       (new GroupsResource()).index {}, (success, groups) ->
         scope.groups = groups if success
-
-      scope.groups = []
