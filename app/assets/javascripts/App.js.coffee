@@ -26,6 +26,7 @@ angular
       .state('registration',
         url: '/registration',
         templateUrl: '/templates/states/registration.html',
+        controller: 'RegistrationController',
         onlyUnauthenticated: true
       )
   ))

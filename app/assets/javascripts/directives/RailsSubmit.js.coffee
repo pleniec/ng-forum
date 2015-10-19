@@ -13,4 +13,5 @@ angular
             scope.$parent.onSuccess()(response.data)
             scope.$parent.form = {}
           , (response) ->
-            scope.$parent.errors = response.data
+            console.log(response.data)
+            scope.$parent.errors = response.data.errors || response.data

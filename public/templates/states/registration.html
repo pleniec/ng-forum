@@ -1,2 +1,18 @@
 <h1>Sign Up!</h1>
-<sign-up-form></sign-up-form>
+<rails-form url="/users" on-success="goToIndex">
+  <div class="form-group">
+    <label>Email:</label>
+    <rails-input attribute="email" type="email"></rails-input>
+  </div>
+  <div class="form-group">
+    <label>Name:</label>
+    <rails-input attribute="name" type="text"></rails-input>
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <rails-input attribute="password" type="password"></rails-input>
+  </div>
+  <div class="form-group">
+    <rails-submit>Sign Up</rails-submit>
+  </div>
+</rails-form>
