@@ -1,9 +1,9 @@
 angular
   .module('ng-forum')
-  .controller 'IndexController', ($scope, $state, GroupsResource) ->
+  .controller 'IndexController', ($scope, $state, api) ->
     $scope.groups = []
 
-    (new GroupsResource()).index {}, (success, groups) ->
+    api.resource('groups').index {}, (success, groups) ->
       $scope.groups = groups if success
 
     $scope.reloadState = (group) ->
