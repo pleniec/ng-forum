@@ -11,6 +11,5 @@ angular
           .post(scope.$parent.url, scope.$parent.form)
           .then (response) ->
             scope.$parent.onSuccess()(response.data)
-            console.log('success')
           , (response) ->
             scope.$parent.errors = response.data

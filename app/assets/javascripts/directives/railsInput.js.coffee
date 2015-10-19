@@ -8,5 +8,3 @@ angular
     link: (scope, element, attrs, railsForm) ->
       scope.attribute = attrs.attribute
       scope.type = attrs.type
-
-      console.log(scope)

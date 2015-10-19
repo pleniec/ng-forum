@@ -7,7 +7,7 @@ class GroupsController < APIController
 
   def create
     authorize! :create, Group
-    render json: Group.create!(create_params), status: 201
+    render json: Group.create!(create_params), status: 201, root: false
   end
 
   private

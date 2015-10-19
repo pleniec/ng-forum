@@ -18,15 +18,16 @@ angular
         $q.reject(rejection)
 
     $stateProvider
-      .state('index', {
+      .state('index',
         url: '',
-        templateUrl: '/templates/states/index.html'
-      })
-      .state('registration', {
+        templateUrl: '/templates/states/index.html',
+        controller: 'IndexController'
+      )
+      .state('registration',
         url: '/registration',
         templateUrl: '/templates/states/registration.html',
         onlyUnauthenticated: true
-      })
+      )
   ))
   .run ($rootScope, session) ->
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
